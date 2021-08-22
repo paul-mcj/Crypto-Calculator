@@ -17,10 +17,20 @@
     </head>
     <body>
         <div class="background">
+            <h3 class="app-title">Crypto Calculator</h3>
             <div class="container">
-                <form>
+                <form class="form">
                     <div class="row">
-                        <div class="four columns">
+                        <div class="six columns">
+                            <label for="cryptoAmount">Amount</label>
+                            <input
+                                type="text"
+                                id="cryptoAmount"
+                                class="u-full-width"
+                                placeholder="Enter crypto amount"
+                            />
+                        </div>
+                        <div class="six columns">
                             <label for="cryptoType" color="black">Cryptocurrency</label>
                             <select class="u-full-width" id="cryptoType">
                                 <option value="btc" class="btc">Bitcoin</option>
@@ -29,16 +39,7 @@
                                 <option value="ltc" class="ltc">Litecoin</option>
                             </select>
                         </div>
-                        <div class="four columns">
-                            <label for="cryptoAmount">Amount</label>
-                            <input
-                                type="text"
-                                id="cryptoAmount"
-                                class="u-full-width"
-                                placeholder="Enter here"
-                            />
-                        </div>
-                        <div class="four columns">
+                        <div class="twelve columns">
                             <label for="fiatCurrency">Fiat Currency</label>
                             <select class="u-full-width" id="fiatCurrency">
                                 <option value="cad" class="cad">CAD</option>
@@ -52,7 +53,7 @@
                         </div>
                     </div>
                 </form>
-                <button class="button-primary submit twelve columns">Calculate</button>
+                <button class="button submit twelve columns">Calculate</button>
                 <div class="result"></div>
                 <div class="serverTime"></div>
             </div>

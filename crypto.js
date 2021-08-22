@@ -36,11 +36,19 @@
 
 const submit = document.querySelector(".submit");
 const result = document.querySelector(".result");
+const form = document.querySelector(".form");
 const serverTime = document.querySelector(".serverTime");
 const cryptoType = document.querySelector("#cryptoType");
 const cryptoAmount = document.querySelector("#cryptoAmount");
 const fiatCurrency = document.querySelector("#fiatCurrency");
 
+form.addEventListener("submit", function (event) {
+    getPrice();
+    getServerTime();
+    event.preventDefault();
+});
+
+//todo: need to fix??
 submit.addEventListener("click", getPrice);
 submit.addEventListener("click", getServerTime);
 
@@ -80,11 +88,11 @@ function getPrice(event) {
         }
     };
     xhr.send();
-    event.preventDefault();
 }
 
 // todo:
 // - add alerts for amount input (cannot be less than zero, and must be a number)
+// - reset the amount field when the submit button is clicked
 // - add a gif to "calculate" when the button is clicked for UI
 // - update to use es6 classes and constructors
 // - update from xhr model of async to es6 promises

@@ -39,8 +39,8 @@ footer > P {
     background-color: hsla(0, 0%, 100%, 0.45);
     display: grid;
     border: black solid 2px;
-    width: 50%;
-    margin-top: 10%;
+    width: 70%;
+    margin-top: 5%;
     border-radius: 1em;
     padding: 2em;
 }
@@ -50,15 +50,24 @@ footer > P {
     z-index: -1;
     width: 100%;
     min-height: 100%;
-    background-image: url(pexels-alesia-kozik-6780838.jpg);
+    background-image: url(pexels-daniel-dan-7712570.jpg);
+    background-blend-mode: luminosity;
+    background-color: #33c3f0;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .submit {
     color: black;
     background-color: white;
     border: black 2px solid;
+}
+
+.app-title {
+    margin-top: 1em;
+    text-align: center;
+    color: white;
 }
 
 :is(.result, .serverTime) {
