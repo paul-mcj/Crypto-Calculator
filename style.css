@@ -1,0 +1,66 @@
+:root {
+    box-sizing: border-box;
+}
+
+:is(*, ::before, ::after) {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+span {
+    text-transform: uppercase;
+}
+
+button {
+    width: 50%;
+}
+
+footer {
+    text-align: center;
+    margin-top: 15em;
+    background-color: white;
+    border: 2px solid black;
+    border-left: none;
+    border-right: none;
+}
+
+footer > P {
+    margin: 0;
+}
+
+.container {
+    background-color: hsla(0, 0%, 100%, 0.45);
+    display: grid;
+    border: black solid 2px;
+    width: 50%;
+    margin-top: 10%;
+    border-radius: 1em;
+    padding: 2em;
+}
+
+.background {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    min-height: 100%;
+    background-image: url(pexels-alesia-kozik-6780838.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.submit {
+    color: black;
+    background-color: white;
+    border: black 2px solid;
+}
+
+:is(.result, .serverTime) {
+    color: black;
+}

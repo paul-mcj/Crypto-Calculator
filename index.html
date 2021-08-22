@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="crypto.js" defer></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+            integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <title>Crypto</title>
+    </head>
+    <body>
+        <div class="background">
+            <div class="container">
+                <form>
+                    <div class="row">
+                        <div class="four columns">
+                            <label for="cryptoType" color="black">Cryptocurrency</label>
+                            <select class="u-full-width" id="cryptoType">
+                                <option value="btc" class="btc">Bitcoin</option>
+                                <option value="eth" class="eth">Ether</option>
+                                <option value="bch" class="bch">Bitcoin Cash</option>
+                                <option value="ltc" class="ltc">Litecoin</option>
+                            </select>
+                        </div>
+                        <div class="four columns">
+                            <label for="cryptoAmount">Amount</label>
+                            <input
+                                type="text"
+                                id="cryptoAmount"
+                                class="u-full-width"
+                                placeholder="Enter here"
+                            />
+                        </div>
+                        <div class="four columns">
+                            <label for="fiatCurrency">Fiat Currency</label>
+                            <select class="u-full-width" id="fiatCurrency">
+                                <option value="cad" class="cad">CAD</option>
+                                <option value="usd" class="usd">USD</option>
+                                <option value="eur" class="eur">EUR</option>
+                                <option value="jpy" class="jpy">JPY</option>
+                                <option value="gbp" class="gbp">GBP</option>
+                                <option value="aud" class="aud">AUD</option>
+                                <option value="cny" class="cny">CNY</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <button class="button-primary submit twelve columns">Calculate</button>
+                <div class="result"></div>
+                <div class="serverTime"></div>
+            </div>
+            <footer>
+                <p>
+                    Market prices and additional data come from
+                    <span>
+                        <a href="https://www.coinbase.com/" target="blank_">coinbase</a>
+                    </span>
+                    cryptocurrency exchange platform. For more information on the Coinbase Digital
+                    API, visit their
+                    <span>
+                        <a href="https://developers.coinbase.com/api/v2" target="blank_">
+                            api reference.
+                        </a>
+                    </span>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
