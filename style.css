@@ -1,32 +1,32 @@
 :root {
     box-sizing: border-box;
+    --main-color: hsl(194, 86%, 57%);
+    --trans-white-0: hsla(0, 0%, 100%, 0);
+    --trans-white-70: hsla(0, 0%, 100%, 0.7);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
 }
 
 :is(*, ::before, ::after) {
     box-sizing: inherit;
 }
 
-img {
-    max-width: 100%;
-}
-
 body {
     margin: 0;
+}
+
+img {
+    max-width: 100%;
 }
 
 span {
     text-transform: uppercase;
 }
 
-button {
-    width: 50%;
-}
-
 footer {
-    text-align: center;
-    margin-top: 15em;
-    background-color: white;
-    border: 2px solid black;
+    margin-top: 12em;
+    background-color: var(--white);
+    border: 2px solid var(--black);
     border-left: none;
     border-right: none;
 }
@@ -35,41 +35,68 @@ footer > P {
     margin: 0;
 }
 
+/* fixme: stacking context with the (.container) is resizing this class when processing data... */
+.background {
+    background-image: url(pexels-daniel-dan-7712570.jpg);
+    background-blend-mode: luminosity;
+    background-color: var(--main-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.app-title {
+    padding-top: 1em;
+    color: var(--white);
+}
+
 .container {
-    background-color: hsla(0, 0%, 100%, 0.45);
-    display: grid;
-    border: black solid 2px;
+    background-color: var(--trans-white-70);
+    border: var(--black) solid 2px;
     width: 70%;
     margin-top: 5%;
     border-radius: 1em;
     padding: 2em;
 }
 
-.background {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    min-height: 100%;
-    background-image: url(pexels-daniel-dan-7712570.jpg);
-    background-blend-mode: luminosity;
-    background-color: #33c3f0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.loader {
+    display: none;
+    margin: 2.5rem auto;
+    border: 0.25em solid var(--main-color);
+    border-top: 0.25em solid var(--trans-white-0);
+    border-radius: 100%;
+    width: 5em;
+    height: 5em;
+    animation: spin 1s linear infinite;
 }
-
 .submit {
-    color: black;
-    background-color: white;
-    border: black 2px solid;
+    color: var(--black);
+    background-color: var(--white);
+    border: var(--black) 2px solid;
 }
 
-.app-title {
-    margin-top: 1em;
+.result {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: var(--black);
+    padding: 1em 0;
+}
+
+.server-time {
+    margin-bottom: -2em;
+}
+
+/* Utility class */
+.text-align-center {
     text-align: center;
-    color: white;
 }
 
-:is(.result, .serverTime) {
-    color: black;
+/* Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

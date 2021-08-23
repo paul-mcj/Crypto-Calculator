@@ -17,22 +17,22 @@
     </head>
     <body>
         <div class="background">
-            <h3 class="app-title">Crypto Calculator</h3>
+            <h3 class="app-title text-align-center">Crypto Calculator</h3>
             <div class="container">
                 <form class="form">
                     <div class="row">
                         <div class="six columns">
-                            <label for="cryptoAmount">Amount</label>
+                            <label for="crypto-amount">Amount</label>
                             <input
                                 type="text"
-                                id="cryptoAmount"
+                                id="crypto-amount"
                                 class="u-full-width"
                                 placeholder="Enter crypto amount"
                             />
                         </div>
                         <div class="six columns">
-                            <label for="cryptoType" color="black">Cryptocurrency</label>
-                            <select class="u-full-width" id="cryptoType">
+                            <label for="crypto-type" color="black">Cryptocurrency</label>
+                            <select class="u-full-width" id="crypto-type">
                                 <option value="btc" class="btc">Bitcoin</option>
                                 <option value="eth" class="eth">Ether</option>
                                 <option value="bch" class="bch">Bitcoin Cash</option>
@@ -40,8 +40,8 @@
                             </select>
                         </div>
                         <div class="twelve columns">
-                            <label for="fiatCurrency">Fiat Currency</label>
-                            <select class="u-full-width" id="fiatCurrency">
+                            <label for="fiat-currency">Fiat Currency</label>
+                            <select class="u-full-width" id="fiat-currency">
                                 <option value="cad" class="cad">CAD</option>
                                 <option value="usd" class="usd">USD</option>
                                 <option value="eur" class="eur">EUR</option>
@@ -53,11 +53,12 @@
                         </div>
                     </div>
                 </form>
-                <button class="button submit twelve columns">Calculate</button>
-                <div class="result"></div>
-                <div class="serverTime"></div>
+                <div class="loader"></div>
+                <button class="button-primary submit twelve columns">Calculate</button>
+                <div class="result text-align-center"></div>
+                <div class="server-time text-align-center"></div>
             </div>
-            <footer>
+            <footer class="text-align-center">
                 <p>
                     Market prices and additional data come from
                     <span>
