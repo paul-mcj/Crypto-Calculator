@@ -1,4 +1,4 @@
 # Crypto-Calculator
-Small app that works with Coinbase open API to convert some amount of crypto currency (chosen by a user) into its worth in some fiat currency (again, by the user).
+This app works with the Coinbase open API, where it allows a user to convert any amount of a chosen crypto (BTC, ETH, LTC, BCH) into its worth in some fiat currency. All prices use Coinbase's "spot price" in real time, which means it gathers the current market price for a cryptocurrency. A returned server time is given to inform the user that the price is current as well.
 
-View site [here](https://paul-mcj.github.io/Crypto-Calculator/) for the app!
+Please visit the [Crypto Calculator](https://paul-mcj.github.io/Crypto-Calculator/) for yourself!
