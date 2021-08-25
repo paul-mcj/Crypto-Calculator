@@ -24,11 +24,18 @@ span {
 }
 
 footer {
-    margin-top: 12em;
+    margin-top: 15em;
     background-color: var(--white);
     border: 2px solid var(--black);
     border-left: none;
     border-right: none;
+}
+
+/* Skeleton css media query for phablet devices -- adding more margin to footer to enhance visuals */
+@media (min-width: 550px) {
+    footer {
+        margin-top: 19em;
+    }
 }
 
 footer > P {
@@ -48,6 +55,17 @@ footer > P {
 .app-title {
     padding-top: 1em;
     color: var(--white);
+}
+/* Skeleton css media query for landscape devices -- enlarging title font size */
+@media (min-width: 750px) {
+    .app-title {
+        font-size: 3em;
+    }
+}
+@media (min-width: 1000px) {
+    .app-title {
+        font-size: 4em;
+    }
 }
 
 .container {
@@ -79,7 +97,7 @@ footer > P {
     font-weight: bold;
     font-size: 1.5em;
     color: var(--black);
-    padding: 1em 0;
+    padding: 2em 0;
 }
 
 .server-time {
