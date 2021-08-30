@@ -7,12 +7,12 @@ const submit = document.querySelector(".submit");
 const result = document.querySelector(".result");
 const serverTime = document.querySelector(".server-time");
 
-form.addEventListener("submit", function (event) {
+form.addEventListener("submit", (event) => {
     getPrice();
     event.preventDefault();
 });
 
-submit.addEventListener("click", getPrice);
+submit.addEventListener("click", (event) => getPrice(event));
 
 function getPrice() {
     let amount = cryptoAmount.value;
@@ -22,14 +22,11 @@ function getPrice() {
         window.alert("Amount must be greater than 0. Try again!");
     } else {
         fetch(`https://api.coinbase.com/v2/prices/${crypto}-${fiat}/spot`)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
+            .then((response) => response.json())
+            .then((data) => {
                 let newAmount = Number(data.data.amount * amount).toFixed(2);
-                function numberWithCommas(amount) {
-                    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                }
+                numberWithCommas = (amount) =>
+                    amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 let symbol;
                 switch (fiat) {
                     case "gbp":
@@ -39,51 +36,40 @@ function getPrice() {
                         symbol = "\u20ac";
                         break;
                     case "jpy":
-                        symbol = "\u00a5";
-                        break;
                     case "cny":
                         symbol = "\u00a5";
                         break;
                     default:
                         symbol = "\u0024";
-                        break;
                 }
                 processingData();
-                setTimeout(revealingData, 3000);
+                setTimeout(revealingData, 2000);
                 result.textContent = `${amount} ${crypto.toUpperCase()} is worth ${symbol}${numberWithCommas(
                     newAmount
                 )} in ${fiat.toUpperCase()}`;
             })
-            .catch(function (error) {
-                console.log(error);
-            });
+            .catch((error) => console.log(error));
     }
     cryptoAmount.value = "";
 }
 
-function processingData() {
+processingData = () => {
     loader.style.display = "block";
     submit.style.display = "none";
     result.style.display = "none";
     serverTime.textContent = `Fetching data from server...`;
-}
+};
 
-function revealingData() {
+revealingData = () => {
     loader.style.display = "none";
     submit.style.display = "block";
     result.style.display = "block";
     getServerTime();
-}
+};
 
-function getServerTime() {
+getServerTime = () => {
     fetch("https://api.coinbase.com/v2/time")
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            serverTime.textContent = `Data retrieved from server at ${data.data.iso}`;
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-}
+        .then((response) => response.json())
+        .then((data) => (serverTime.textContent = `Data retrieved from server at ${data.data.iso}`))
+        .catch((error) => console.log(error));
+};

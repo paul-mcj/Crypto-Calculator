@@ -5,6 +5,7 @@
     --trans-white-70: hsla(0, 0%, 100%, 0.7);
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
+    --black-40: hsl(0, 0%, 40%);
 }
 
 :is(*, ::before, ::after) {
@@ -24,9 +25,8 @@ span {
 }
 
 footer {
+    color: var(--white);
     margin-top: 15em;
-    background-color: var(--white);
-    border: 2px solid var(--black);
     border-left: none;
     border-right: none;
 }
@@ -46,7 +46,7 @@ footer > P {
 .background {
     background-image: url(pexels-daniel-dan-7712570.jpg);
     background-blend-mode: luminosity;
-    background-color: var(--main-color);
+    background-color: var(--black);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -77,6 +77,14 @@ footer > P {
     padding: 2em;
 }
 
+.container > p {
+    position: relative;
+    color: var(--black-40);
+    text-align: right;
+    font-size: 0.75em;
+    margin: 0 -1.5em -1.5em 0;
+}
+
 .loader {
     display: none;
     margin: 2.5rem auto;
@@ -102,6 +110,7 @@ footer > P {
 
 .server-time {
     margin-bottom: -2em;
+    padding-bottom: 2em;
 }
 
 /* Utility class */

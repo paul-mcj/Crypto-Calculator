@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <script src="crypto.js" defer></script> -->
         <script src="crypto-1.js" defer></script>
         <link
             rel="stylesheet"
@@ -23,12 +24,7 @@
                     <div class="row">
                         <div class="six columns">
                             <label for="crypto-amount">Amount</label>
-                            <input
-                                type="text"
-                                id="crypto-amount"
-                                class="u-full-width"
-                                placeholder="Enter crypto amount"
-                            />
+                            <input type="number" id="crypto-amount" class="u-full-width" />
                         </div>
                         <div class="six columns">
                             <label for="crypto-type" color="black">Cryptocurrency</label>
@@ -57,6 +53,7 @@
                 <button class="button-primary submit twelve columns">Calculate</button>
                 <div class="result text-align-center"></div>
                 <div class="server-time text-align-center"></div>
+                <p>v1.0.5</p>
             </div>
             <footer class="text-align-center">
                 <p>
