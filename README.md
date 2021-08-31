@@ -56,6 +56,6 @@ This app was a lot of fun and it took me a few days to make. I'm glad I was able
 
 ## Author
 
--   LinkedIn: [Paul McJannet](www.linkedin.com/in/paul-mcjannet)
+-   LinkedIn: [Paul McJannet](https://www.linkedin.com/in/paul-mcjannet)
 -   Frontend Mentor: [@paul-mcj](https://www.frontendmentor.io/profile/paul-mcj)
 -   Github: [paul-mcj](https://github.com/paul-mcj)
