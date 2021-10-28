@@ -14,6 +14,7 @@
         3.2 -- processingData()
         3.3 -- revealingData()
         3.4 -- getServerTime()
+        3.5 -- numberWithCommas()
         
 *******************************************************************************/
 
@@ -60,11 +61,12 @@ function getPrice() {
         fetch(`https://api.coinbase.com/v2/prices/${crypto}-${fiat}/spot`)
             .then((response) => response.json())
             .then((data) => {
-                // round the data to hundredths
+                // round the data to hundredth decimal places
                 let newAmount = Number(data.data.amount * amount).toFixed(2);
-                // and make sure it is separated into thousands with commas for easier readability (if the returned value is larger than 999.99).
-                numberWithCommas = (amount) =>
-                    amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                // if the newAmount is less than ten thousand it stays returned, otherwise it needs to call a function that separates larger returned values with commas for easier readability
+                if (newAmount > 9999.99) {
+                    newAmount = numberWithCommas(newAmount);
+                }
                 let symbol;
                 // set the fiat symbol according to the user input
                 switch (fiat) {
@@ -85,9 +87,7 @@ function getPrice() {
                 //purposefully wait two seconds to return data for UI/UX (a loader animation is used in this timeframe)
                 setTimeout(revealingData, 2000);
                 //set the amount to be displayed on the webpage
-                result.textContent = `${amount} ${crypto.toUpperCase()} is worth ${symbol}${numberWithCommas(
-                    newAmount
-                )} in ${fiat.toUpperCase()}`;
+                result.textContent = `${amount} ${crypto.toUpperCase()} = ${symbol}${newAmount} in ${fiat.toUpperCase()}`;
             })
             .catch((error) => console.log(error));
     }
@@ -115,6 +115,12 @@ revealingData = () => {
 getServerTime = () => {
     fetch("https://api.coinbase.com/v2/time")
         .then((response) => response.json())
-        .then((data) => (serverTime.textContent = `Data retrieved from server at ${data.data.iso}`))
+        .then((data) => {
+            let date = new Date(data.data.iso);
+            serverTime.textContent = `Data retrieved from server ${date.toString()}`;
+        })
         .catch((error) => console.log(error));
 };
+
+// 3.5 Converts an amount to a string, separating with commas
+numberWithCommas = (amount) => amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
