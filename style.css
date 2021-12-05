@@ -50,9 +50,11 @@
     box-sizing: inherit;
 }
 
-/* 1.3 Resets all margins on the body */
+/* 1.3 Set display to relative for the container to be placed absolutely */
 body {
     margin: 0;
+    position: relative;
+    display: grid;
 }
 
 /* 1.4 Sets a max width for the image */
@@ -67,13 +69,13 @@ span {
 
 /* 1.6.1 Sets global styles for the footer, mostly text colour change and a pushed margin to allow the form element primary focus*/
 footer {
+    background-color: var(--black);
     color: var(--white);
-    margin-top: 15em;
 }
 
 /* 1.6.2  Reset the margin of primary child element of the footer to make it stretch to the bottom of the page*/
 footer > p {
-    margin: 0;
+    margin-top: 2em;
 }
 
 /******************************************************************************
@@ -88,6 +90,7 @@ footer > p {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    min-height: 100vh;
 }
 
 /* 2.2.1 Sets the main style properties of the container*/
@@ -98,6 +101,9 @@ footer > p {
     margin-top: 5%;
     border-radius: 1em;
     padding: 2em;
+    position: absolute;
+    top: 5em;
+    justify-self: center;
 }
 
 /* 2.2.2 Style properties for the app's semantic versioning */
