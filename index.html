@@ -1,74 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="crypto-1.js" defer></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
-            integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <link rel="stylesheet" href="style.css" />
-        <title>Crypto</title>
-    </head>
-    <body>
-        <div class="background">
-            <h3 class="app-title text-align-center">Crypto Calculator</h3>
-        </div>
-        <div class="container">
-            <form class="form">
-                <div class="row">
-                    <div class="six columns">
-                        <label for="crypto-amount">Amount</label>
-                        <input type="number" id="crypto-amount" class="u-full-width" />
-                    </div>
-                    <div class="six columns">
-                        <label for="crypto-type" color="black">Cryptocurrency</label>
-                        <select class="u-full-width" id="crypto-type">
-                            <option value="btc" class="btc">Bitcoin</option>
-                            <option value="eth" class="eth">Ether</option>
-                            <option value="bch" class="bch">Bitcoin Cash</option>
-                            <option value="ltc" class="ltc">Litecoin</option>
-                        </select>
-                    </div>
-                    <div class="twelve columns">
-                        <label for="fiat-currency">Fiat Currency</label>
-                        <select class="u-full-width" id="fiat-currency">
-                            <option value="cad" class="cad">CAD</option>
-                            <option value="usd" class="usd">USD</option>
-                            <option value="eur" class="eur">EUR</option>
-                            <option value="jpy" class="jpy">JPY</option>
-                            <option value="gbp" class="gbp">GBP</option>
-                            <option value="aud" class="aud">AUD</option>
-                            <option value="cny" class="cny">CNY</option>
-                        </select>
-                    </div>
-                </div>
-            </form>
-            <div class="loader"></div>
-            <button class="button-primary submit twelve columns">Calculate</button>
-            <div class="result text-align-center"></div>
-            <div class="server-time text-align-center"></div>
-            <p>v1.0.7</p>
-        </div>
-        <footer class="text-align-center">
-            <p>
-                Market prices and additional data come from
-                <span>
-                    <a href="https://www.coinbase.com/" target="blank_">coinbase</a>
-                </span>
-                cryptocurrency exchange platform. For more information on the Coinbase Digital API,
-                visit their
-                <span>
-                    <a href="https://developers.coinbase.com/api/v2" target="blank_">
-                        api reference.
-                    </a>
-                </span>
-            </p>
-        </footer>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<script
+			src="crypto-1.js"
+			defer></script>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+			integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link
+			rel="stylesheet"
+			href="style.css" />
+		<title>Crypto</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="background">
+				<h1 class="app-title text-align-center">
+					Crypto Calculator
+				</h1>
+				<div class="container">
+					<form class="form">
+						<div class="row">
+							<div class="six columns">
+								<label for="crypto-amount"
+									>Amount</label
+								>
+								<input
+									type="number"
+									id="crypto-amount"
+									class="u-full-width" />
+							</div>
+							<div class="six columns">
+								<label
+									for="crypto-type"
+									color="black"
+									>Cryptocurrency</label
+								>
+								<select
+									class="u-full-width"
+									id="crypto-type">
+									<option
+										value="btc"
+										class="btc">
+										Bitcoin
+									</option>
+									<option
+										value="eth"
+										class="eth">
+										Ether
+									</option>
+									<option
+										value="bch"
+										class="bch">
+										Bitcoin Cash
+									</option>
+									<option
+										value="ltc"
+										class="ltc">
+										Litecoin
+									</option>
+								</select>
+							</div>
+							<div class="twelve columns">
+								<label for="fiat-currency"
+									>Fiat Currency</label
+								>
+								<select
+									class="u-full-width"
+									id="fiat-currency">
+									<option
+										value="cad"
+										class="cad">
+										CAD
+									</option>
+									<option
+										value="usd"
+										class="usd">
+										USD
+									</option>
+									<option
+										value="eur"
+										class="eur">
+										EUR
+									</option>
+									<option
+										value="jpy"
+										class="jpy">
+										JPY
+									</option>
+									<option
+										value="gbp"
+										class="gbp">
+										GBP
+									</option>
+									<option
+										value="aud"
+										class="aud">
+										AUD
+									</option>
+									<option
+										value="cny"
+										class="cny">
+										CNY
+									</option>
+								</select>
+							</div>
+						</div>
+					</form>
+					<div class="loader"></div>
+					<button
+						class="button-primary twelve columns submit"
+						id="submit">
+						Calculate
+					</button>
+					<div class="result text-align-center"></div>
+					<div class="server-time text-align-center"></div>
+				</div>
+				<footer class="text-align-center">
+					<p>
+						Market prices and additional data come from
+						<span>
+							<a
+								href="https://www.coinbase.com/"
+								target="blank_"
+								>coinbase</a
+							>
+						</span>
+						cryptocurrency exchange platform. For more
+						information on the Coinbase Digital API, visit
+						their
+						<span>
+							<a
+								href="https://developers.coinbase.com/api/v2"
+								target="blank_">
+								api reference.
+							</a>
+						</span>
+					</p>
+					<p>
+						Visit
+						<a
+							href="https://www.paulmcjannet.com/"
+							target="_blank"
+							>my website</a
+						>
+						for more about me!
+					</p>
+					<p>
+						See
+						<a
+							href="https://github.com/paul-mcj/"
+							target="_blank"
+							>my GitHub</a
+						>
+						to view my other projects
+					</p>
+					<p>
+						<a
+							href="https://www.linkedin.com/in/paul-mcjannet/"
+							target="_blank"
+							>Follow me</a
+						>
+						on LinkedIn
+					</p>
+					<p>
+						Background image is designed by
+						<a
+							href="https://www.freepik.com/free-ai-image/3d-rendering-blockchain-technology_196469723.htm#fromView=search&page=1&position=7&uuid=aa1defe3-d150-4b0e-92e3-89c6684b8358&new_detail=true&query=crypto"
+							target="_blank"
+							>Freepik</a
+						>
+					</p>
+					<p>
+						Copyright &copy;<span id="current-year"></span>
+						Paul McJannet | v2.0 | All Rights Reserved
+					</p>
+				</footer>
+			</div>
+		</div>
+	</body>
 </html>
