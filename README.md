@@ -1,4 +1,4 @@
-# Crypto Calculator (v1.0.6)
+# Crypto Calculator (v2.0)
 
 ## About this project
 
