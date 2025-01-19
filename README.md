@@ -88,5 +88,5 @@ apply my knowledge to bigger and better projects in the future :)
 ## Author
 
 -    My Website: [paulmcjannet.com](https://www.paulmcjannet.com/)
--    LinkedIn: [Paul McJannet](www.linkedin.com/in/paul-mcjannet)
+-    LinkedIn: [Paul McJannet](https://www.linkedin.com/in/paul-mcjannet/)
 -    Github Profile: [paul-mcj](https://github.com/paul-mcj/)
